@@ -60,6 +60,25 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-info-soft: var(--info-soft);
+  --color-violet: var(--violet);
+  --color-violet-soft: var(--violet-soft);
+  --color-nav: var(--nav);
+  --color-promo: var(--promo);
+  --color-surface-soft: var(--surface-soft);
+  --color-table-head: var(--table-head);
+  --color-selected: var(--selected);
+  --color-chart-a: var(--chart-a);
+  --color-chart-b: var(--chart-b);
+  --color-chart-c: var(--chart-c);
+  --color-chart-d: var(--chart-d);
+  --color-chart-e: var(--chart-e);
 }
 
 :root {
@@ -96,6 +115,25 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
+  --success: oklch(0.62 0.17 158);
+  --success-soft: oklch(0.96 0.045 158);
+  --warning: oklch(0.64 0.16 62);
+  --warning-soft: oklch(0.97 0.045 78);
+  --danger: oklch(0.61 0.23 25);
+  --danger-soft: oklch(0.96 0.045 20);
+  --info-soft: oklch(0.96 0.035 245);
+  --violet: oklch(0.59 0.22 292);
+  --violet-soft: oklch(0.96 0.045 292);
+  --nav: oklch(0.42 0.08 260);
+  --promo: oklch(0.965 0.025 245);
+  --surface-soft: oklch(0.985 0.01 247);
+  --table-head: oklch(0.975 0.012 247);
+  --selected: oklch(0.97 0.025 245);
+  --chart-a: oklch(0.67 0.16 246);
+  --chart-b: oklch(0.7 0.16 282);
+  --chart-c: oklch(0.71 0.14 196);
+  --chart-d: oklch(0.77 0.14 145);
+  --chart-e: oklch(0.83 0.16 95);
 }
 
 .dark {
@@ -147,4 +185,12 @@
   }
 
   button, input, select { font: inherit; }
+}
+
+@utility shadow-card {
+  box-shadow: 0 1px 3px color-mix(in oklab, var(--foreground) 7%, transparent);
+}
+
+@utility bg-donut {
+  background: conic-gradient(var(--success) 0deg 331deg, var(--warning) 331deg 345deg, var(--danger) 345deg 360deg);
 }

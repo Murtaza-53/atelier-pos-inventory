@@ -37,8 +37,9 @@ export const Route = createFileRoute("/")({
 type Status = "In Stock" | "Low Stock" | "Out of Stock";
 type Product = { name:string; subtitle:string; sku:string; category:string; brand:string; variants:number; stock:number; reserved:number; status:Status; image:string };
 
+const firstProduct: Product = { name:"Men's Casual Shirt",subtitle:"Smart Fit",sku:"SH-001",category:"Men",brand:"Allen Solly",variants:8,stock:65,reserved:3,status:"In Stock",image:shirt };
 const products: Product[] = [
-  { name:"Men's Casual Shirt",subtitle:"Smart Fit",sku:"SH-001",category:"Men",brand:"Allen Solly",variants:8,stock:65,reserved:3,status:"In Stock",image:shirt },
+  firstProduct,
   { name:"Women's Kurti",subtitle:"A-Line",sku:"KR-110",category:"Women",brand:"Aurelia",variants:6,stock:12,reserved:2,status:"Low Stock",image:kurti },
   { name:"Denim Jeans",subtitle:"Slim Fit",sku:"JN-250",category:"Men",brand:"Levi's",variants:12,stock:0,reserved:0,status:"Out of Stock",image:jeans },
   { name:"Kids T-Shirt",subtitle:"Round Neck",sku:"KD-012",category:"Kids",brand:"H&M",variants:10,stock:34,reserved:4,status:"In Stock",image:tshirt },
@@ -75,7 +76,7 @@ function ProductThumb({product,large=false}:{product:Product;large?:boolean}) {
 function InventoryPage() {
   const [sidebarOpen,setSidebarOpen] = useState(true);
   const [detailsOpen,setDetailsOpen] = useState(true);
-  const [selected,setSelected] = useState(products[0]);
+  const [selected,setSelected] = useState<Product>(firstProduct);
   const [query,setQuery] = useState("");
   const [category,setCategory] = useState("all");
   const [brand,setBrand] = useState("all");
